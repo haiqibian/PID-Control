@@ -2,6 +2,35 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+## PID effections
+
+Let's look deeper on the PID parameters.
+
+![Successful driving with appropriate pid coefficient  low velocity](../../Downloads/CarND-PID-Control-Project-master/Successful driving with appropriate pid coefficient  low velocity.png)
+
+### P part
+
+Control only with p based controller , the reaction of car was pretty interesting. When the car ran with small cte, it can handled the little cte with small oscillation. But when the car turned the curve, the cte became larger and the controller began to control with big range of oscillation. 
+
+![Oscillation  with only P control](../../Downloads/CarND-PID-Control-Project-master/Oscillation  with only P control.png)
+
+### I part
+
+I think the only I controller's reaction time is also too long. Reaction time can be handled by adding proportional control. It sum a lot of cte and generated big control value and then repeated the previous step again. 
+
+### D part
+
+The D based controller's with small cte change rate, generated little control value. 
+
+### PID with high velocity
+
+- throttle 90%
+   appropriate PID coefficient was tuned. Then applied the value to controller with throlle of 0.9 (90%). Controller generate pretty good steer value in straight road. But once in the curve, controller started to generate steer value that made vehicle oscillation.
+
+###PID with low velocity 
+
+- throttle 30%
+   Tuned the parameters(kp,ki,kd) appropriately and apply to the code.The output was pretty good. The controller generate meaningful steering value to vehicle. So it can drive the car ran whole track.
 
 ## Dependencies
 
